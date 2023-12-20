@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1400px">
+  <title>HEMOCHAT</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script src="assets/js/jquery-3.6.1.min.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <header class="header">
+      <div class="header-inner">
+        <h1 class="logo">
+          <a href="index.html">
+            <img src="assets/images/logo/logo-color.png" alt="">
+          </a>
+        </h1>
+
+        <div class="header-btn-grp">
+          <ul class="btn-list-grp">
+            <li class="list upload-list">
+              <button type="button" class="upload-hbtn">
+                <i class="ico ico-upload ico-off"></i>
+                <i class="ico ico-upload ico-white ico-on"></i>
+                <span class="txt">이미지업로드</span>
+              </button>
+
+              <div class="sub-hbtn-wrap type-before-upload">
+                <ul class="sub-hbtn-list-grp">
+                  <li class="sub-hbtn-list">
+                    <input type="file" id="file01" class="none"></input>
+                    <label for="file01" class="link">파일 올리기</label>
+                  </li>
+                  <li class="sub-hbtn-list">
+                    <input type="file" id="file02" class="none">
+                    <label for="file02" class="link">폴더 올리기</label>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- TODO: 업로드 후 나타나는 요소 (클래스 show 추가) -->
+              <div class="sub-hbtn-wrap type-after-upload">
+                <div class="sub-hbtn-upload-container">
+                  <div class="progress-wrap">
+                    <p class="txt"><span>1</span>/1개 업로드 중...</p>
+                    <span class="progress">
+                      <i class="progress-bar"></i>
+                    </span>
+                  </div>
+
+                  <div class="upload-item">
+                    <figure class="thumbnail">
+                      <img src="assets/images/img-default.svg" alt="" class="thumbnail-img">
+                    </figure>
+                    <div class="info">
+                      <p class="info-title">검사표이미지.jpg</p>
+                      <span class="info-desc">2.1KB</span>
+                    </div>
+                    <span class="circle-badge">
+                      <i class="ico ico-check"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="list">
+              <!-- TODO: 알람 있을 경우 active 클래스 추가 -->
+              <button type="button" onclick="location.href='chat-main.html';" class="hbtn alarm-hbtn active">
+                <span class="txt-hidden">알림</span>
+                <i class="ico ico-alarm"></i>
+              </button>
+            </li>
+
+            <li class="list">
+              <button type="button" onclick="location.href='mypage-main.html';" class="hbtn">
+                <span class="txt-hidden">마이페이지</span>
+                <i class="ico ico-mypage"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- TODO: 업로드 후 나타나는 어둠효과 (클래스 show 추가) -->
+    <div class="bg-overlay"></div>
+
+    <div class="main-page l-page">
+      <div class="l-sidebar">
+        <ul class="sidebar-menu-list-grp">
+          <li class="sidebar-menu-list">
+            <a href="index.html" class="link">일반 화학 검사</a>
+          </li>
+
+          <li class="sidebar-menu-list ">
+            <a href="index2.html" class="link">혈액 응고 검사</a>
+          </li>
+
+          <li class="sidebar-menu-list ">
+            <a href="index3.html" class="link">요 검사</a>
+          </li>
+
+          <li class="sidebar-menu-list ">
+            <a href="index4.html" class="link">수혈 검사</a>
+          </li>
+
+          <li class="sidebar-menu-list ">
+            <a href="index5.html" class="link">효소 & 면역 혈청검사</a>
+          </li>
+
+          <li class="sidebar-menu-list ">
+            <a href="index6.html" class="link">혈소판 약물 반응 검사</a>
+          </li>
+
+          <li class="sidebar-menu-list ">
+            <a href="index7.html" class="link">혈액학 검사</a>
+          </li>
+
+          <li class="sidebar-menu-list ">
+            <a href="index8.html" class="link">유전자 검사</a>
+          </li>
+
+          <li class="sidebar-menu-list ">
+            <a href="index9.html" class="link">갑상선 표지자 검사</a>
+          </li>
+
+          <li class="sidebar-menu-list ">
+            <a href="index10.html" class="link">심장 표지자 검사</a>
+          </li>
+
+          <li class="sidebar-menu-list ">
+            <a href="index11.html" class="link">골형성 표지자 검사</a>
+          </li>
+
+          <li class="sidebar-menu-list active">
+            <a href="index12.html" class="link">암 표식자 검사</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="l-container">
+        <!-- 페이지 -->
+        <div class="page-contents">
+          <!-- 상단 배너 -->
+          <div class="main-banner-wrap">
+            <img src="assets/images/img-noti.png" alt="" class="character-img">
+
+            <div class="main-banner">
+              <div class="txt-wrap">
+                <h3 class="banner-title">검사 결과를 입력해 주세요. </h3>
+                <p class="banner-desc">헤모쳇은 혈액검사결과를 바탕으로 어떠한 진료가 필요한지 알려줍니다. <br>
+                  검색을 이용하시면 검사 항목을 더 빠르게 찾을 수 있습니다.</p>
+              </div>
+            </div>
+          </div>
+          <!-- END 상단 배너 -->
+
+          <section class="page-section">
+            <div class="title-wrap">
+              <h2 class="title">암 표식자 검사</h2>
+
+              <div class="mg-left inp-btn-item">
+                <input type="text" class="inp" placeholder="항목 검색">
+                <button type="button" class="btn theme-solid-btn">항목찾기</button>
+              </div>
+            </div>
+
+            <div class="content-wrap">
+              <ul class="grid-list-grp">
+                <li class="list">
+                  <div class="form-item">
+                    <label for="#" class="label">
+                      <span>CEA</span>
+                      <span class="sm-text">(Carcinoembryonic Antigen)</span>
+                    </label>
+
+                    <div class="inp-grp">
+                      <input type="text" class="inp" placeholder="Normal Range">
+                      <div class="question-mark">
+                        <span class="question">?</span>
+
+                        <div class="question-desc">BUN 설명입니다</div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="list">
+                  <div class="form-item">
+                    <label for="#" class="label">
+                      <span>AFP</span>
+                    </label>
+
+                    <div class="inp-grp">
+                      <input type="text" class="inp" placeholder="Normal Range">
+                      <div class="question-mark">
+                        <span class="question">?</span>
+
+                        <div class="question-desc">Ra Factor 설명입니다</div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="list">
+                  <div class="form-item">
+                    <label for="#" class="label">
+                      <span>CA-125</span>
+                    </label>
+
+                    <div class="inp-grp">
+                      <input type="text" class="inp" placeholder="Normal Range">
+                      <div class="question-mark">
+                        <span class="question">?</span>
+
+                        <div class="question-desc">Ra Factor 설명입니다</div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <!-- 1줄 -->
+
+                <li class="list">
+                  <div class="form-item">
+                    <label for="#" class="label">
+                      <span>CA-15-3</span>
+                    </label>
+
+                    <div class="inp-grp">
+                      <input type="text" class="inp" placeholder="Normal Range">
+                      <div class="question-mark">
+                        <span class="question">?</span>
+
+                        <div class="question-desc">BUN 설명입니다</div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="list">
+                  <div class="form-item">
+                    <label for="#" class="label">
+                      <span>PSA</span>
+                      <span class="sm-text">(Prostate Specific Antigen)</span>
+                    </label>
+
+                    <div class="inp-grp">
+                      <input type="text" class="inp" placeholder="Normal Range">
+                      <div class="question-mark">
+                        <span class="question">?</span>
+
+                        <div class="question-desc">Ra Factor 설명입니다</div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <!-- 1줄 -->
+              </ul>
+            </div>
+          </section>
+        </div>
+        <!-- END 페이지 -->
+
+        <!-- 입력항목 -->
+        <div class="inp-item-container">
+          <h4 class="title">입력항목</h4>
+
+          <ul class="list-grp">
+            <li class="list">
+              <div class="inp-item">
+                <label class="ii-label">Creatinine</label>
+                <input type="text" class="inp" value="1">
+                <button type="button" class="circle-btn">
+                  <span class="txt-hidden">삭제</span>
+                  <i class="ico ico-x"></i>
+                </button>
+              </div>
+            </li>
+            <li class="list">
+              <div class="inp-item">
+                <label class="ii-label">Creatinine</label>
+                <input type="text" class="inp" value="1">
+                <button type="button" class="circle-btn">
+                  <span class="txt-hidden">삭제</span>
+                  <i class="ico ico-x"></i>
+                </button>
+              </div>
+            </li>
+            <li class="list">
+              <div class="inp-item">
+                <label class="ii-label">Creatinine</label>
+                <input type="text" class="inp" value="1">
+                <button type="button" class="circle-btn">
+                  <span class="txt-hidden">삭제</span>
+                  <i class="ico ico-x"></i>
+                </button>
+              </div>
+            </li>
+            <li class="list">
+              <div class="inp-item">
+                <label class="ii-label">Creatinine</label>
+                <input type="text" class="inp" value="1">
+                <button type="button" class="circle-btn">
+                  <span class="txt-hidden">삭제</span>
+                  <i class="ico ico-x"></i>
+                </button>
+              </div>
+            </li>
+          </ul>
+
+          <button type="button" class="btn theme-solid-btn">제출하기</button>
+        </div>
+        <!-- END 입력항목 -->
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/ui.js"></script>
+</body>
+
+</html>
