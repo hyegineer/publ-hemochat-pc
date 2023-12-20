@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1400px">
+  <title>HEMOCHAT</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script src="assets/js/jquery-3.6.1.min.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <header class="header">
+      <div class="header-inner">
+        <h1 class="logo">
+          <a href="index.html">
+            <img src="assets/images/logo/logo-color.png" alt="">
+          </a>
+        </h1>
+
+        <div class="header-btn-grp">
+          <ul class="btn-list-grp">
+            <li class="list upload-list">
+              <button type="button" class="upload-hbtn">
+                <i class="ico ico-upload ico-off"></i>
+                <i class="ico ico-upload ico-white ico-on"></i>
+                <span class="txt">이미지업로드</span>
+              </button>
+
+              <div class="sub-hbtn-wrap type-before-upload">
+                <ul class="sub-hbtn-list-grp">
+                  <li class="sub-hbtn-list">
+                    <input type="file" id="file01" class="none"></input>
+                    <label for="file01" class="link">파일 올리기</label>
+                  </li>
+                  <li class="sub-hbtn-list">
+                    <input type="file" id="file02" class="none">
+                    <label for="file02" class="link">폴더 올리기</label>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- TODO: 업로드 후 나타나는 요소 (클래스 show 추가) -->
+              <div class="sub-hbtn-wrap type-after-upload">
+                <div class="sub-hbtn-upload-container">
+                  <div class="progress-wrap">
+                    <p class="txt"><span>1</span>/1개 업로드 중...</p>
+                    <span class="progress">
+                      <i class="progress-bar"></i>
+                    </span>
+                  </div>
+
+                  <div class="upload-item">
+                    <figure class="thumbnail">
+                      <img src="assets/images/img-default.svg" alt="" class="thumbnail-img">
+                    </figure>
+                    <div class="info">
+                      <p class="info-title">검사표이미지.jpg</p>
+                      <span class="info-desc">2.1KB</span>
+                    </div>
+                    <span class="circle-badge">
+                      <i class="ico ico-check"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="list">
+              <!-- TODO: 알람 있을 경우 active 클래스 추가 -->
+              <button type="button" onclick="location.href='chat-main.html';" class="hbtn alarm-hbtn active">
+                <span class="txt-hidden">알림</span>
+                <i class="ico ico-alarm"></i>
+              </button>
+            </li>
+
+            <li class="list">
+              <button type="button" onclick="location.href='mypage-main.html';" class="hbtn">
+                <span class="txt-hidden">마이페이지</span>
+                <i class="ico ico-mypage"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- TODO: 업로드 후 나타나는 어둠효과 (클래스 show 추가) -->
+    <div class="bg-overlay"></div>
+
+    <div class="chat-main-page l-page">
+      <div class="l-container">
+        <!-- 페이지 -->
+        <div class="page-contents">
+          <div class="chat-container">
+            <div class="chat-status-area">
+              <div class="bubble-grp in">
+                <div class="bubble">제 피검사 결과는 어떤가요?</div>
+              </div>
+
+              <div class="bubble-grp out">
+                <div class="icon">
+                  <img src="assets/images/img-hemo.svg" alt="">
+                </div>
+                <div class="bubble">
+                  당신의 피 검사 결과는 모든 항목이 “Normal Range”로 나와 있습니다. 이는 당신의 혈액 상태가 일반적인 범위 내에 있는 것을 의미합니다. 이 결과는 대부분의 질환을 제외한
+                  정상적인 상태를 나타냅니다. 하지만 피 검사 결과만으로는 모든 질환을 완전히 배제할 수는 없으므로, 다른 증상이나 의심되는 사항이 있다면 의사와 상담하는 것이 좋습니다. 어떤
+                  질문이든지 더 있으신가요?
+                </div>
+              </div>
+
+              <div class="bubble-grp out">
+                <div class="icon">
+                  <img src="assets/images/img-hemo.svg" alt="">
+                </div>
+                <div class="bubble">
+                  <div class="dot-flashing-grp">
+                    <div class="dot-flashing"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="chat-create-area">
+              <div class="inp-grp">
+                <input type="text" class="inp" placeholder="궁금한 사항을 입력해주세요.">
+                <button type="button" class="send-btn">전송</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END 페이지 -->
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/ui.js"></script>
+</body>
+
+</html>

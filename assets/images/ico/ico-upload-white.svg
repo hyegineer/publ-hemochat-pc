@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="14" height="13.999" viewBox="0 0 14 13.999">
+  <g id="upload_on" transform="translate(-2 -2.002)">
+    <path id="패스_12" data-name="패스 12" d="M16,23.5v2a1,1,0,0,1-1,1H3a1,1,0,0,1-1-1v-2a.5.5,0,0,1,1,0v2H15v-2a.5.5,0,0,1,1,0Z" transform="translate(0 -10.499)" fill="#fff"/>
+    <path id="패스_13" data-name="패스 13" d="M8.146,6.354a.5.5,0,0,1,0-.707l3.5-3.5a.5.5,0,0,1,.708,0l3.5,3.5a.5.5,0,1,1-.707.707L12.5,3.708V12.5a.5.5,0,0,1-1,0V3.708L8.853,6.354A.5.5,0,0,1,8.146,6.354Z" transform="translate(-3 0)" fill="#fff"/>
+  </g>
+</svg>
